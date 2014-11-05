@@ -1,0 +1,33 @@
+{
+  "name": "card-dealer",
+  "version": "0.1.0",
+  "description": "Generate Playing Card Objects",
+  "main": "lib/card-dealer.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theaccordance/card-dealer.git"
+  },
+  "keywords": [
+    "dealer",
+    "playing",
+    "cards",
+    "card",
+    "shuffle",
+    "poker"
+  ],
+  "author": "Joe Mainwaring <jm@theaccordance.com> (http://joemainwaring.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theaccordance/card-dealer/issues"
+  },
+  "homepage": "https://github.com/theaccordance/card-dealer",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-jslint": "^1.1.12",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0"
+  }
+}
