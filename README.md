@@ -1,5 +1,5 @@
 # Card Dealer
-[![Build Status](https://travis-ci.org/theaccordance/card-dealer.svg?branch=master)](https://travis-ci.org/theaccordance/card-dealer)[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/theaccordance/card-dealer.svg?branch=master)] (https://travis-ci.org/theaccordance/card-dealer)[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Card Dealer is a module that will generate a JavaScript array of playing card objects based on a standard 52 card deck.  
 
