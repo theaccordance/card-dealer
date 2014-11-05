@@ -39,3 +39,6 @@ console.log(Game[0]);
 // { Suit: 'Hearts', Rank: '4' }
 
 ```
+
+## Feature Requests
+Have a suggestion for this npm module?  Submit an issue.  
