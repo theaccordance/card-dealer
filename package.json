@@ -1,15 +1,12 @@
 {
   "name": "card-dealer",
-  "version": "0.1.3",
-  "description": "Generate Playing Card Objects",
-  "main": "lib/card-dealer.js",
+  "version": "2.0.0",
+  "description": "Performs dealer functions for a deck of cards",
+  "main": "index.ts",
   "scripts": {
     "test": "make test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/theaccordance/card-dealer.git"
-  },
+  "repository": "https://github.com/theaccordance/card-dealer.git",
   "keywords": [
     "dealer",
     "playing",
@@ -25,9 +22,7 @@
   },
   "homepage": "https://github.com/theaccordance/card-dealer",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-jslint": "^1.1.12",
-    "mocha": "^2.0.1",
+    "jest": "^25.3.0",
     "should": "^4.1.0"
   }
 }
