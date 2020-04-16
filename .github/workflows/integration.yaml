@@ -1,0 +1,15 @@
+name: Integration Tests
+on:
+  push:
+    paths:
+      - "src/**/*"
+jobs:
+  test:
+    steps:
+      - uses: actions/checkout@v1
+      - uses: Adzz/jest_test_action@v1.0.0
+        with:
+          command: install
+      - uses: Adzz/jest_test_action@v1.0.0
+        with:
+          command: test
