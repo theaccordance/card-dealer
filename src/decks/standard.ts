@@ -15,12 +15,15 @@ const ranks: string[] = [
   "Ace",
 ];
 
-function buildDeck(deck: object[], suit: string) {
+function buildDeck(deck: StandardPlayingCard[], suit: string): StandardPlayingCard[] {
   const cards = ranks.map((rank) => Object.assign({}, { suit, rank }));
 
   return deck.concat(cards);
 }
 
-const standardDeck: object[] = suits.reduce(buildDeck, []);
+export interface StandardPlayingCard {
+  suit: string;
+  rank: string;
+}
 
-export default standardDeck;
+export const standardDeck: StandardPlayingCard[] = suits.reduce(buildDeck, []);
