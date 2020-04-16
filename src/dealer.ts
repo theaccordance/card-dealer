@@ -2,19 +2,30 @@
 
 class Dealer {
     private _deck: any[];
-    // private _drawPile: any[] = [];
+    private _drawPile: any[] = [];
     // private _discardPile: any[] = [];
-    private _options: any;
+    // private _options: any;
 
     /**
      * Instantiates a Dealer instance to play games
      * @param deck
      * @param options
      */
-    public constructor(deck: any[], options: any) {
+    public constructor(deck: any[]) {
+
+        if (!deck) {
+            throw Error("A card deck is required when instantiating a Dealer class")
+        }
+
+        if (["array"].indexOf(typeof deck) === -1) {
+            console.log(`typeof deck: ${typeof deck}`);
+            console.log(deck);
+            throw Error("Deck must be an array");
+        }
+
         // need to valdiate the deck first
         this._deck = deck;
-        this._options = options;
+        // this._options = options;
     }
 
     /**
@@ -51,8 +62,8 @@ class Dealer {
      * Resets the dealer for a new game
      */
     public reset() {
-        this._drawPile = this._deck;
-        this._discardPile = [];
+        // this._drawPile = this._deck;
+        // this._discardPile = [];
     }
 }
 

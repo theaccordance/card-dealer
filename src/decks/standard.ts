@@ -21,6 +21,6 @@ function buildDeck(deck: object[], suit: string) {
   return deck.concat(cards);
 }
 
-const standardDeck = suits.reduce(buildDeck, []);
+const standardDeck: object[] = suits.reduce(buildDeck, []);
 
 export default standardDeck;
