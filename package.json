@@ -4,16 +4,19 @@
   "description": "Performs dealer functions for a deck of cards",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": "https://github.com/theaccordance/card-dealer.git",
   "keywords": [
-    "dealer",
-    "playing",
+    "playing cards",
+    "poker",
+    "card game",
     "cards",
-    "card",
+    "dealer",
     "shuffle",
-    "poker"
+    "card deck",
+    "blackjack"
   ],
   "author": "Joe Mainwaring <jm@theaccordance.com> (http://joemainwaring.com)",
   "license": "MIT",
