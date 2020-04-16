@@ -1,9 +1,8 @@
-
-
 class Dealer {
     private _deck: any[];
     private _drawPile: any[];
     private _discardPile: any[];
+
     // private _options: any;
 
     /**
@@ -14,8 +13,8 @@ class Dealer {
     public constructor(deck: any[]) {
 
         // need to valdiate the deck first
-        this._deck = deck;
-        this._drawPile = deck;
+        this._deck = [...deck];
+        this._drawPile = [...deck];
         this._discardPile = [];
         // this._options = options;
     }
@@ -26,7 +25,7 @@ class Dealer {
     public shuffle() {
 
         function shuffleDeck(deck: any[]) {
-            for (let index = deck.length -1; index > 0; index--) {
+            for (let index = deck.length - 1; index > 0; index--) {
                 const swap = Math.floor(Math.random() * index);
                 [deck[index], deck[swap]] = [deck[swap], deck[index]];
             }
@@ -58,15 +57,24 @@ class Dealer {
      * @param count
      */
     public discard(count: number = 1) {
-        // cards are moved to the burn pile
+        const discardedCards: any[] = this._drawPile.splice(0, count);
+        this._discardPile.concat(discardedCards);
+        return;
     }
 
     /**
      * Resets the dealer for a new game
      */
     public reset() {
-        // this._drawPile = this._deck;
-        // this._discardPile = [];
+        this._drawPile = [...this._deck];
+        this._discardPile = [];
+    }
+
+    /**
+     * returns a count for the remaining cards in the draw pile
+     */
+    public remainingCards() {
+        return this._drawPile.length;
     }
 }
 
