@@ -1,24 +1,19 @@
+import { standardDeck, StandardPlayingCard } from "./decks/standard";
 import Dealer from "./dealer";
-import standardDeck from "./decks/standard";
 
 describe("Dealer Class", () => {
    it("export exists", () => expect(Dealer).not.toBeUndefined());
 
-   it("Throws an error if instantiated without a deck", () => {
-      try {
-         const game = new Dealer();
-      } catch (e) {
-         console.log(e);
-         expect(e).not.toBeUndefined();
-      }
+   it("draw method returns 1 card by default", () => {
+      const dealer = new Dealer(standardDeck);
+      const result = dealer.draw();
+      expect(result).toHaveLength(1);
    });
 
-   it("Throws an error if passed a non-array value as a deck", () => {
-      try {
-         const game = new Dealer("foo");
-      } catch (e) {
-         console.log(e);
-         expect(e).not.toBeUndefined();
-      }
+   it("draw method returns the number of cards specified", ()=> {
+      const qty = 5;
+      const dealer = new Dealer(standardDeck);
+      const result = dealer.draw(qty);
+      expect(result).toHaveLength(qty);
    });
 });

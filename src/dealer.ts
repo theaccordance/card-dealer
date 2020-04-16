@@ -2,8 +2,8 @@
 
 class Dealer {
     private _deck: any[];
-    private _drawPile: any[] = [];
-    // private _discardPile: any[] = [];
+    private _drawPile: any[];
+    private _discardPile: any[];
     // private _options: any;
 
     /**
@@ -13,18 +13,10 @@ class Dealer {
      */
     public constructor(deck: any[]) {
 
-        if (!deck) {
-            throw Error("A card deck is required when instantiating a Dealer class")
-        }
-
-        if (["array"].indexOf(typeof deck) === -1) {
-            console.log(`typeof deck: ${typeof deck}`);
-            console.log(deck);
-            throw Error("Deck must be an array");
-        }
-
         // need to valdiate the deck first
         this._deck = deck;
+        this._drawPile = deck;
+        this._discardPile = [];
         // this._options = options;
     }
 
@@ -32,7 +24,16 @@ class Dealer {
      * Randomizes the draw pile
      */
     public shuffle() {
-        // randomly shuffles the deck for a game
+
+        function shuffleDeck(deck: any[]) {
+            for (let index = deck.length -1; index > 0; index--) {
+                const swap = Math.floor(Math.random() * index);
+                [deck[index], deck[swap]] = [deck[swap], deck[index]];
+            }
+            return deck;
+        }
+
+        this._drawPile = shuffleDeck(this._deck);
     }
 
     /**
@@ -47,7 +48,9 @@ class Dealer {
      * @param count
      */
     public draw(count: number = 1) {
-        // Pulls cards from the top of the deck, defaults to 1 card
+        const drawnCards: any[] = this._drawPile.splice(0, count);
+        this._discardPile.concat(drawnCards);
+        return drawnCards;
     }
 
     /**
