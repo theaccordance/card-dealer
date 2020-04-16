@@ -1,7 +1,7 @@
-class Dealer {
-    private _deck: any[];
-    private _drawPile: any[];
-    private _discardPile: any[];
+class Dealer<D extends object> {
+    private _deck: D[];
+    private _drawPile: D[];
+    private _discardPile: D[];
 
     // private _options: any;
 
@@ -10,7 +10,7 @@ class Dealer {
      * @param deck
      * @param options
      */
-    public constructor(deck: any[]) {
+    public constructor(deck: D[]) {
 
         // need to valdiate the deck first
         this._deck = [...deck];
@@ -24,7 +24,7 @@ class Dealer {
      */
     public shuffle() {
 
-        function shuffleDeck(deck: any[]) {
+        function shuffleDeck(deck: D[]) {
             for (let index = deck.length - 1; index > 0; index--) {
                 const swap = Math.floor(Math.random() * index);
                 [deck[index], deck[swap]] = [deck[swap], deck[index]];
@@ -38,8 +38,9 @@ class Dealer {
     /**
      * Splits the deck & puts the top half on the bottom
      */
-    public cut() {
-        // splits the deck into two and puts the top half on the bottom
+    public cut(count: number = 1) {
+        const top = this._drawPile.splice(0, count);
+        this._drawPile.concat(top);
     }
 
     /**
@@ -47,7 +48,7 @@ class Dealer {
      * @param count
      */
     public draw(count: number = 1) {
-        const drawnCards: any[] = this._drawPile.splice(0, count);
+        const drawnCards: D[] = this._drawPile.splice(0, count);
         this._discardPile.concat(drawnCards);
         return drawnCards;
     }
@@ -57,7 +58,7 @@ class Dealer {
      * @param count
      */
     public discard(count: number = 1) {
-        const discardedCards: any[] = this._drawPile.splice(0, count);
+        const discardedCards: D[] = this._drawPile.splice(0, count);
         this._discardPile.concat(discardedCards);
         return;
     }
