@@ -15,7 +15,10 @@ const ranks: string[] = [
   "Ace",
 ];
 
-function buildDeck(deck: StandardPlayingCard[], suit: string): StandardPlayingCard[] {
+function buildDeck(
+  deck: StandardPlayingCard[],
+  suit: string
+): StandardPlayingCard[] {
   const cards = ranks.map((rank) => Object.assign({}, { suit, rank }));
 
   return deck.concat(cards);
