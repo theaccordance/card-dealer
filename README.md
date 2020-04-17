@@ -1,5 +1,9 @@
 # Card Dealer
 
+===
+
+![Integration Tests](https://github.com/theaccordance/card-dealer/workflows/Integration%20Tests/badge.svg?branch=master)
+
 ## Installation
 
 Install for node.js using npm:

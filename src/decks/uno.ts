@@ -5,7 +5,10 @@ export interface UnoPlayingCard {
 
 const standardColors = ["red", "yellow", "green", "blue"];
 
-function buildColorDeck(cards, color): UnoPlayingCard[] {
+function buildColorDeck(
+  cards: UnoPlayingCard[],
+  color: string
+): UnoPlayingCard[] {
   const standardRanks = [
     "1",
     "2",
