@@ -27,12 +27,6 @@ describe("Dealer Class", () => {
     expect(result).toBeTruthy();
   });
 
-  it("remainingCards() returns a count of the cards left in the draw pile", () => {
-    const dealer = new Dealer<StandardPlayingCard>(standardDeck);
-    const remaining = dealer.remainingCards();
-    expect(remaining).toBe(standardDeck.length);
-  });
-
   it("discard() shifts 1 card from the draw pile to the discard pile by default", () => {
     const dealer = new Dealer<StandardPlayingCard>(standardDeck);
     expect(dealer.remainingCards()).toBe(standardDeck.length);
@@ -94,6 +88,12 @@ describe("Dealer Class", () => {
     const [topCard] = dealer.cut(cutPosition).draw();
     expect(topCard.rank).toBe(standardDeck[cutPosition].rank);
     expect(topCard.suit).toBe(standardDeck[cutPosition].suit);
+  });
+
+  it("remainingCards() returns a count of the cards left in the draw pile", () => {
+    const dealer = new Dealer<StandardPlayingCard>(standardDeck);
+    const remaining = dealer.remainingCards();
+    expect(remaining).toBe(standardDeck.length);
   });
 
   it("reset() replenishes the draw pile", () => {
