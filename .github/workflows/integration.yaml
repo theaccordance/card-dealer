@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "src/**/*"
+      - "package.json"
 jobs:
   test:
     runs-on: ubuntu-latest

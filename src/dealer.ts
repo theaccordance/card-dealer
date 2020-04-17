@@ -38,7 +38,7 @@ class Dealer<D extends object> {
   /**
    * Splits the deck & puts the top half on the bottom
    * @chainable
-   * @param count
+   * @param {number} count - The position of the deck to cut
    */
   public cut(count: number = 1) {
     const top = this._drawPile.splice(0, count);
@@ -60,7 +60,7 @@ class Dealer<D extends object> {
   /**
    * Moves cards from the draw pile to the discard pile
    * @chainable
-   * @param count
+   * @param {number} count - The number of cards to move from the draw pile to the discard pile
    */
   public discard(count: number = 1) {
     const discardedCards: D[] = this._drawPile.splice(0, count);
