@@ -9,10 +9,10 @@ const ranks: string[] = [
   "8",
   "9",
   "10",
-  "Jack",
-  "Queen",
-  "King",
-  "Ace",
+  "jack",
+  "queen",
+  "king",
+  "ace",
 ];
 
 function buildDeck(

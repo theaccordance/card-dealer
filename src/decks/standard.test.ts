@@ -1,6 +1,6 @@
 import { standardDeck } from "./standard";
 
-describe("Standard Deck", () => {
+describe("Standard Card Deck", () => {
   it("export exists", () => expect(standardDeck).not.toBeUndefined());
   it("returns 52 cards", () => expect(standardDeck).toHaveLength(52));
   it("Each card is an object with properties 'suit' and 'rank'", () => {
