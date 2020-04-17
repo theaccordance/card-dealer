@@ -3,12 +3,9 @@ class Dealer<D extends object> {
   private _drawPile: D[];
   private _discardPile: D[];
 
-  // private _options: any;
-
   /**
    * Instantiates a Dealer instance to play games
    * @param deck
-   * @param options
    */
   public constructor(deck: D[]) {
     // need to valdiate the deck first
@@ -24,9 +21,9 @@ class Dealer<D extends object> {
    */
   public shuffle() {
     function shuffleDeck(deck: D[]) {
-      for (let index = deck.length - 1; index > 0; index--) {
-        const swap = Math.floor(Math.random() * index);
-        [deck[index], deck[swap]] = [deck[swap], deck[index]];
+      for (let remaining = deck.length - 1; remaining > 0; remaining--) {
+        const swap = Math.floor(Math.random() * remaining);
+        [deck[remaining], deck[swap]] = [deck[swap], deck[remaining]];
       }
       return deck;
     }
