@@ -1,4 +1,4 @@
-name: Integration Tests
+name: Build
 on:
   push:
     paths:
@@ -12,9 +12,6 @@ jobs:
       - uses: Adzz/jest_test_action@v1.0.0
         with:
           command: install
-      - uses: Adzz/jest_test_action@v1.0.0
-        with:
-          command: test
       - uses: Adzz/jest_test_action@v1.0.0
         with:
           command: build:check
