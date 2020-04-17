@@ -1,7 +1,7 @@
 # Card Dealer
 
 ![Build](https://github.com/theaccordance/card-dealer/workflows/Build/badge.svg?branch=master)
-![Test Coverage](https://github.com/theaccordance/card-dealer/workflows/Test%20Coverage/badge.svg?branch=master)
+![Test Coverage](https://github.com/theaccordance/card-dealer/workflows/coverage/badge.svg?branch=master)
 
 ## Installation
 
