@@ -17,6 +17,16 @@ describe("Dealer Class", () => {
     expect(result).toHaveLength(qty);
   });
 
+  it("draw() returns cards in default order if shuffle() is not invoked", () => {
+    const dealer = new Dealer<StandardPlayingCard>(standardDeck);
+    const drawnDeck = dealer.draw(standardDeck.length);
+    const result = drawnDeck.every((card: StandardPlayingCard, index) => {
+      const compare = standardDeck[index];
+      return card.suit === compare.suit || card.rank === compare.rank;
+    });
+    expect(result).toBeTruthy();
+  });
+
   it("remainingCards() returns a count of the cards left in the draw pile", () => {
     const dealer = new Dealer<StandardPlayingCard>(standardDeck);
     const remaining = dealer.remainingCards();
@@ -38,6 +48,13 @@ describe("Dealer Class", () => {
     expect(dealer.remainingCards()).toBe(standardDeck.length - discardQty);
   });
 
+  it("discard() is chainable", () => {
+    const handQty = 2;
+    const dealer = new Dealer<StandardPlayingCard>(standardDeck);
+    const hand = dealer.discard(1).draw(handQty);
+    expect(hand).toHaveLength(handQty);
+  });
+
   it("shuffle() returns a deck in a randomized order", () => {
     const dealer = new Dealer<StandardPlayingCard>(standardDeck);
     dealer.shuffle();
@@ -49,14 +66,10 @@ describe("Dealer Class", () => {
     expect(result).toBeTruthy();
   });
 
-  it("dealer should return cards in provided order if shuffle() isn't invoked", () => {
+  it("shuffle() is chainable", () => {
     const dealer = new Dealer<StandardPlayingCard>(standardDeck);
-    const drawnDeck = dealer.draw(standardDeck.length);
-    const result = drawnDeck.every((card: StandardPlayingCard, index) => {
-      const compare = standardDeck[index];
-      return card.suit === compare.suit || card.rank === compare.rank;
-    });
-    expect(result).toBeTruthy();
+    const hand = dealer.shuffle().draw();
+    expect(hand).toHaveLength(1);
   });
 
   it("cut() moves 1 card from the top of the draw pile by default", () => {
@@ -71,6 +84,14 @@ describe("Dealer Class", () => {
     const dealer = new Dealer<StandardPlayingCard>(standardDeck);
     dealer.cut(cutPosition);
     const [topCard] = dealer.draw();
+    expect(topCard.rank).toBe(standardDeck[cutPosition].rank);
+    expect(topCard.suit).toBe(standardDeck[cutPosition].suit);
+  });
+
+  it("cut() is chainable", () => {
+    const cutPosition = 31;
+    const dealer = new Dealer<StandardPlayingCard>(standardDeck);
+    const [topCard] = dealer.cut(cutPosition).draw();
     expect(topCard.rank).toBe(standardDeck[cutPosition].rank);
     expect(topCard.suit).toBe(standardDeck[cutPosition].suit);
   });

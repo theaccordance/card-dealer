@@ -20,6 +20,7 @@ class Dealer<D extends object> {
 
   /**
    * Randomizes the draw pile
+   * @chainable
    */
   public shuffle() {
     function shuffleDeck(deck: D[]) {
@@ -31,19 +32,24 @@ class Dealer<D extends object> {
     }
 
     this._drawPile = shuffleDeck(this._deck);
+    return this;
   }
 
   /**
    * Splits the deck & puts the top half on the bottom
+   * @chainable
+   * @param count
    */
   public cut(count: number = 1) {
     const top = this._drawPile.splice(0, count);
     this._drawPile.concat(top);
+    return this;
   }
 
   /**
    * Draws cards from the draw pile
    * @param count
+   * @return cards
    */
   public draw(count: number = 1) {
     const drawnCards: D[] = this._drawPile.splice(0, count);
@@ -53,24 +59,28 @@ class Dealer<D extends object> {
 
   /**
    * Moves cards from the draw pile to the discard pile
+   * @chainable
    * @param count
    */
   public discard(count: number = 1) {
     const discardedCards: D[] = this._drawPile.splice(0, count);
     this._discardPile.concat(discardedCards);
-    return;
+    return this;
   }
 
   /**
    * Resets the dealer for a new game
+   * @chainable
    */
   public reset() {
     this._drawPile = [...this._deck];
     this._discardPile = [];
+    return this;
   }
 
   /**
    * returns a count for the remaining cards in the draw pile
+   * @returns count of remaining cards from draw pile
    */
   public remainingCards() {
     return this._drawPile.length;
