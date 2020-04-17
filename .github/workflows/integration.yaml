@@ -5,6 +5,7 @@ on:
       - "src/**/*"
 jobs:
   test:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: Adzz/jest_test_action@v1.0.0
