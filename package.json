@@ -2,8 +2,13 @@
   "name": "card-dealer",
   "version": "2.0.0",
   "description": "Performs dealer functions for a deck of cards",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "build:clear": "rm -rf dist/*",
+    "nuke": "rm -rf node_modules/* dist/* coverage/*",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
