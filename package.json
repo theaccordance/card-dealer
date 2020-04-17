@@ -1,22 +1,30 @@
 {
   "name": "card-dealer",
-  "version": "0.1.3",
-  "description": "Generate Playing Card Objects",
-  "main": "lib/card-dealer.js",
+  "version": "2.0.0",
+  "description": "Performs dealer functions for a deck of cards",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "make test"
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "build:clear": "rm -rf dist/*",
+    "nuke": "rm -rf node_modules/* dist/* coverage/*",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/theaccordance/card-dealer.git"
-  },
+  "repository": "https://github.com/theaccordance/card-dealer.git",
   "keywords": [
-    "dealer",
-    "playing",
+    "playing cards",
+    "poker",
+    "card game",
     "cards",
-    "card",
+    "dealer",
     "shuffle",
-    "poker"
+    "card deck",
+    "blackjack"
   ],
   "author": "Joe Mainwaring <jm@theaccordance.com> (http://joemainwaring.com)",
   "license": "MIT",
@@ -25,9 +33,31 @@
   },
   "homepage": "https://github.com/theaccordance/card-dealer",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-jslint": "^1.1.12",
-    "mocha": "^2.0.1",
-    "should": "^4.1.0"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.1",
+    "babel-jest": "^25.3.0",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "should": "^4.1.0",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
