@@ -5,7 +5,7 @@ class Dealer<D extends object> {
 
   /**
    * Instantiates a Dealer instance to play games
-   * @param deck
+   * @param deck - an array of card objects
    */
   public constructor(deck: D[]) {
     // need to valdiate the deck first
