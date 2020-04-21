@@ -2,10 +2,22 @@
 
 ![Build](https://github.com/theaccordance/card-dealer/workflows/Build/badge.svg?branch=master)
 ![Test Coverage](https://github.com/theaccordance/card-dealer/workflows/coverage/badge.svg?branch=master)
+![License](https://img.shields.io/npm/l/card-dealer)
+
+A robust card-dealing JavaScript Class written in TypeScript
+
+## Features
+
+- Use any card deck with the `Dealer` class
+- Shuffle deck into a random order
+- Draw cards for use
+- Discard cards without revealing them
+- Cut the deck
+- Included Decks
+  - Standard 52 Playing Cards
+  - Uno
 
 ## Installation
-
-Install for node.js using npm:
 
 ### npm
 
@@ -19,40 +31,21 @@ $ npm install card-dealer --save
 $ yarn add card-dealer
 ```
 
-### yarn
+## Usage
 
-## Documentation
+### TypeScript
 
-1. [Unpack](#unpack)
-1. [Shuffle](#shuffle)
+```typescript
+import { Dealer, standardDeck } from "card-dealer";
 
-### Unpack
-
-Returns an ordered array of playing card objects.
-
-- Suit Order: Club, Diamonds, Hearts, Spades
-- Rank Order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace
-
-```javascript
-var Dealer = require("./lib/card-dealer"),
-  Game = Dealer.unpack();
-
-console.log(Game[0]);
-// { Suit: 'Clubs', Rank: '2' }
+const dealer = new Dealer(standardDeck);
 ```
 
-### Shuffle
-
-Returns a shuffled array of playing card objects using the Fisher-Yates shuffle algorithm. The Shuffle method accepts an optional array argument to shuffle existing card arrays.
+### JavaScript
 
 ```javascript
-var Dealer = require("./lib/card-dealer"),
-  Game = Dealer.shuffle();
+const Dealer = require("card-dealer/dealer");
+const standardDeck = require("card-dealer/decks/standard");
 
-console.log(Game[0]);
-// { Suit: 'Hearts', Rank: '4' }
+const dealer = new cardDealer.Dealer(standardDeck);
 ```
-
-## Feature Requests
-
-Have a suggestion for this npm module? Submit an issue.
