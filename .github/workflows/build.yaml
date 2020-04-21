@@ -1,13 +1,15 @@
-name: build
 on:
   push:
     paths:
       - "src/**/*"
       - "package.json"
+
+name: build
+
 jobs:
+
   build:
     name: Build from source
-    needs: coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

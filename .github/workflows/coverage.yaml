@@ -10,8 +10,8 @@ name: Coverage Report
 
 jobs:
 
-  build:
-    name: Build
+  coverage:
+    name: Build Coverage Report
     runs-on: ubuntu-latest
     steps:
 
