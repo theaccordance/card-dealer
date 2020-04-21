@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 coverage/
-dist/
 node_modules/
 
 yarn-error.log
