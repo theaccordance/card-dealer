@@ -24,7 +24,11 @@
     "dealer",
     "shuffle",
     "card deck",
-    "blackjack"
+    "blackjack",
+    "typescript",
+    "class"
+    "deck"
+    "uno"
   ],
   "author": "Joe Mainwaring <jm@theaccordance.com> (http://joemainwaring.com)",
   "license": "MIT",
