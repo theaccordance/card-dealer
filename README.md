@@ -78,8 +78,8 @@ Moves the number of cards specified from the draw pile to the discard pile witho
 
 ### dealer.reset()
 
-Resets the draw & discard piles to the default deck position
+Resets the draw & discard piles to the default deck position.
 
 ### dealer.remainingCards()
 
-Returns a count for the remaining cards in the draw pile
+Returns a count for the remaining cards in the draw pile.
