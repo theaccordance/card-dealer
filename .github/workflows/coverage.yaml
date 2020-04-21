@@ -1,4 +1,10 @@
 on: ["push", "pull_request"]
+  push:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "src/**/*"
 
 name: Coverage Report
 
