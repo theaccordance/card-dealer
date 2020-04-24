@@ -846,9 +846,18 @@ const data = {
   ],
 };
 
-export const blackDeck = data.blackCards.map((card) =>
+export interface CAHPlayingCard {
+  color: string; // "white" or "black"
+  text: string;
+}
+
+export interface CAHBlackPlayingCard extends CAHPlayingCard {
+  pick: number;
+}
+
+export const blackDeck: CAHBlackPlayingCard[] = data.blackCards.map((card) =>
   Object.assign({}, { color: "black", ...card })
 );
-export const whiteDeck = data.whiteCards.map((card) =>
+export const whiteDeck: CAHPlayingCard[] = data.whiteCards.map((card) =>
   Object.assign({}, { color: "white", text: card })
 );
