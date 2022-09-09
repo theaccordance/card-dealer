@@ -1,5 +1,6 @@
 # Card Dealer
 
+![NPM Package](https://img.shields.io/badge/NPM-Package-red)
 ![Build](https://github.com/theaccordance/card-dealer/workflows/Build/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/theaccordance/card-dealer/badge.svg)](https://coveralls.io/github/theaccordance/card-dealer)
 [![CodeFactor](https://www.codefactor.io/repository/github/theaccordance/card-dealer/badge/master)](https://www.codefactor.io/repository/github/theaccordance/card-dealer/overview/master)
@@ -83,3 +84,7 @@ Resets the draw & discard piles to the default deck position.
 ### dealer.remainingCards()
 
 Returns a count for the remaining cards in the draw pile.
+
+## License
+
+Card-dealer is offered under the MIT license.
