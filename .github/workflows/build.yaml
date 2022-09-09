@@ -12,11 +12,11 @@ jobs:
     name: Build from source
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: Adzz/jest_test_action@v1.0.0
+      - uses: actions/checkout@v3
+      - uses: Adzz/jest_test_action@v2.0.0
         with:
           command: install
-      - uses: Adzz/jest_test_action@v1.0.0
+      - uses: Adzz/jest_test_action@v2.0.0
         with:
           command: build:check
 
