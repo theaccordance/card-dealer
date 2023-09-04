@@ -12,7 +12,7 @@ jobs:
     name: Build from source
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: Adzz/jest_test_action@v2.0.0
         with:
           command: install
