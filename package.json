@@ -13,7 +13,8 @@
     "build:clear": "rm -rf dist/*",
     "nuke": "rm -rf node_modules/* dist/* coverage/*",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "repository": "https://github.com/theaccordance/card-dealer.git",
   "keywords": [
@@ -42,7 +43,7 @@
     "@babel/preset-typescript": "^7.9.0",
     "@types/jest": "^25.2.1",
     "babel-jest": "^29.0.3",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "jest": "^25.3.0",
     "lint-staged": "^14.0.1",
     "prettier": "^2.0.4",
@@ -52,11 +53,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md}": [
