@@ -45,7 +45,7 @@
     "babel-jest": "^29.0.3",
     "husky": "^8.0.0",
     "jest": "^25.3.0",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.2.0",
     "prettier": "^2.0.4",
     "should": "^13.2.3",
     "ts-node": "^9.1.1",
