@@ -1,7 +1,7 @@
 # Card Dealer
 
 ![NPM Package](https://img.shields.io/badge/NPM-Package-red)
-![Build](https://github.com/theaccordance/card-dealer/workflows/Build/badge.svg?branch=master)
+[![build](https://github.com/theaccordance/card-dealer/actions/workflows/build.yaml/badge.svg)](https://github.com/theaccordance/card-dealer/actions/workflows/build.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/theaccordance/card-dealer/badge.svg)](https://coveralls.io/github/theaccordance/card-dealer)
 [![CodeFactor](https://www.codefactor.io/repository/github/theaccordance/card-dealer/badge/master)](https://www.codefactor.io/repository/github/theaccordance/card-dealer/overview/master)
 ![npm latest version](https://img.shields.io/npm/v/card-dealer/latest)
