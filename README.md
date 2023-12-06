@@ -11,6 +11,24 @@
 
 A robust card-dealing JavaScript Class written in TypeScript
 
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+  - [npm](#npm)
+  - [yarn](#yarn)
+- [Usage](#usage)
+  - [TypeScript](#typescript)
+  - [JavaScript](#javascript)
+- [API](#api)
+  - [Dealer Class](#dealer-class)
+  - [Shuffle](#shuffle)
+  - [Cut](#cut-deck)
+  - [Draw](#draw)
+  - [Discard from Draw Pile](#discard)
+  - [Reset Game](#reset-game)
+  - [Remaining Cards](#remaining-cards)
+- [License](#license)
+
 ## Features
 
 - Use any card deck with the `Dealer` class
@@ -57,33 +75,72 @@ const dealer = new cardDealer.Dealer(standardDeck);
 
 ## API
 
-### const dealer = new Dealer(cardArray)
+### Dealer Class
 
 `Dealer()` takes a deck of cards to use for a game & places it on the draw pile.
 
-### dealer.shuffle()
+```javascript
+const dealer = new Dealer(standardDeck);
+```
+
+### Shuffle
 
 Randomizes the dealer's draw pile order using the [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) algorithm.
 
-### dealer.cut(index)
+```javascript
+dealer.shuffle(); // Deck is now randomized 
+```
 
-Cuts the deck at the specified position in the deck, moving the bottom half to the top of the draw pile.
+### Cut Deck
 
-### dealer.draw(count)
+Cuts the deck at the specified position in the deck, moving the bottom half to the top of the draw pile.  If no value is passed to the method, Dealer will place the top card at the bottom of the deck.
 
-Returns the number of cards requested from the draw pile for use in the game.
+```javascript
+// Top card is now placed at the bottom of the deck
+dealer.cut();
 
-### dealer.discard(count)
+// Top 13 cards are now placed at the bottom of the deck
+dealer.cut(13); 
+```
 
-Moves the number of cards specified from the draw pile to the discard pile without revealing the value to the game.
+### Draw
 
-### dealer.reset()
+Returns the number of cards requested from the draw pile for use in the game.  If no value is passed to the method, Dealer will draw one card.
+
+```javascript
+// Returns the top card from the deck
+dealer.draw();
+
+// Returns the top 5 cards from the deck
+dealer.draw(5); 
+```
+
+### Discard
+
+Moves the number of cards specified from the draw pile to the discard pile without revealing the value to the game. If no value is passed to the method, Dealer will discard only the top card in the pile.
+
+```javascript
+// The first card in the draw pile is discarded
+dealer.discard();
+
+// The first 3 cards in the draw pile are discarded
+dealer.discard(3); 
+```
+
+### Reset Game
 
 Resets the draw & discard piles to the default deck position.
 
-### dealer.remainingCards()
+```javascript
+dealer.reset();
+```
 
+### Remaining Cards
 Returns a count for the remaining cards in the draw pile.
+
+```javascript
+dealer.remainingCards();
+```
 
 ## License
 
