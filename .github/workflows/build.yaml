@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Adzz/jest_test_action@v2.0.0
+      - uses: actions/setup-node@v4
         with:
-          command: install
+          node-version: 20.10.0
+      - run: npm install
       - uses: Adzz/jest_test_action@v2.0.0
         with:
           command: build:check
